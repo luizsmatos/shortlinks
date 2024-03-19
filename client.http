@@ -1,4 +1,4 @@
-POST http://localhost:3333/links
+POST http://localhost:3333/api/links
 Content-Type: application/json
 
 {
@@ -7,4 +7,11 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3333/links
+GET http://localhost:3333/api/links
+
+###
+GET http://localhost:3333/teste
+
+###
+GET http://localhost:3333/api/hits
+
