@@ -2,6 +2,9 @@ POST http://localhost:3333/links
 Content-Type: application/json
 
 {
-    "code": "luizsmatos",
+    "code": "teste",
     "url": "https://www.linkedin.com/in/luizsmatos"
 }
+
+###
+GET http://localhost:3333/links
