@@ -71,6 +71,19 @@ app.post('/api/links', async (request, reply) => {
   }
 })
 
+app.get('/api/hits', async () => {
+  const result = await redis.zRangeByScoreWithScores('hits', 0, 50)
+
+  const hits = result
+    .toSorted((a, b) => b.score - a.score)
+    .map((item) => ({
+      linkId: Number(item.value),
+      clicks: item.score,
+    }))
+
+  return { hits }
+})
+
 app
   .listen({
     port: 3333,
